@@ -3,6 +3,7 @@
   font-family: YouandiModernTR;
   src: url(../fonts/YouandiModernTR.woff) format('woff');
 }
+
 html,
 body,
 h1,
@@ -17,7 +18,7 @@ h6 {
   margin: 0;
 }
 h1 {
-  font-size: 12vh;
+  font-size: 8vh;
 }
 h2 {
   line-height: 1.5em;
@@ -41,18 +42,23 @@ span {
 }
 .logo > img {
   width: 10em;
+  position: absolute;
+  top: 15px;
+  left: 15px;
 }
 /* 카드이름 */
 .card_name {
   display: block;
   width: 100%;
-  height: 12vh;
+  /* height: 12vh; */
   position: relative;
-  top: 40px;
+  top: 155px;
 }
 .card {
+  position: absolute;
   text-align: center;
   width: 100%;
+  animation: showContents 0.5s ease-in 3s forwards;
 }
 
 /* 카드 갤러리 */
@@ -65,7 +71,7 @@ span {
 .gallery_box {
   opacity: 0;
   position: absolute;
-  transform: translate(-50%, 100%);
+  transform: translate(-50%, 85%);
   left: 50%;
   animation: showContents 0.5s ease-in 3s forwards;
 }
