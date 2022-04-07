@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0); /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+      }
+      /* Modal Content/Box */
+      .modal-content {
+        background-color: #fefefe;
+        margin: 4% auto; /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 1000px;
+        height: 700px;
+      }
+      /* The Close Button */
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        padding: 0;
+        margin: 0;
+        display: inline;
+      }
+      .img{
+      float: left;
+      width: 50%;
+      height: 100%;
+      border-radius: 10px 0px 0px 10px;
+      }
+      .img img {
+      width: calc(1000px / 2);
+      height: 700px;
+      border-radius: 10px 0px 0px 10px;
+      object-fit: cover;
+    }
+    .modal_text{
+      float: right;
+      box-sizing: border-box;
+      padding: 50px;
+      width: 50%;
+      height: 100%;
+    }
+    </style>
+  </head>
+  <body>
+    <!-- 첫 번째 Modal -->
+
+    <h1 class="btn">MODAL_1</h1>
+
+    <!-- 첫 번째 Modal -->
+    <div class="modal">
+      <!-- 첫 번째 Modal의 내용 -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="img"><img src="images/greenall.png"/></div>
+        <div class="modal_text">
+            <h3>Voucher</h3>
+            <span>항공, 호텔, 면세점에서 사용 가능한 the Green 바우처<br/>
+                    (연간 최대 50만원)</span>
+                  <h3>M Point</h3>
+                  <span>여행·고메·해외 영역 5% M포인트 특별 적립
+                    이용실적에 따라 매년 7만 M포인트 보너스 리워드 제공<br/>
+                    (연회비 감면 중 택1)</span>
+                  <h3>Premium service</h3>
+                  <span>the Green 회원만을 위한 특별한 전용 혜택<br/>
+                    공항라운지 무료 이용서비스 및 메탈 플레이트 제공</span></div>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+    <!-- 두 번째 Modal을 여는 클래스 -->
+    <h1 class="btn">MODAL_2</h1>
+
+    <!-- 두 번째 Modal -->
+    <div class="modal">
+      <!-- 두 번째 Modal의 내용 -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="img"><img src="images/redall.png"/></div>
+        <div class="modal_text">
+            <h3>Voucher</h3>
+            <span>항공, 호텔, 면세점에서 사용 가능한 the Green 바우처<br/>
+                    (연간 최대 50만원)</span>
+            <h3>M Point</h3>
+            <span>여행·고메·해외 영역 5% M포인트 특별 적립
+                    이용실적에 따라 매년 7만 M포인트 보너스 리워드 제공<br/>
+                    (연회비 감면 중 택1)</span>
+            <h3>Premium service</h3>
+            <span>the Green 회원만을 위한 특별한 전용 혜택<br/>
+                    공항라운지 무료 이용서비스 및 메탈 플레이트 제공</span>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+    <!-- 세 번째 Modal을 여는 클래스 -->
+    <h1 class="btn">MODAL_3</h1>
+
+    <!-- 세 번째 Modal -->
+    <div class="modal">
+      <!-- 세 번째 Modal의 내용 -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="img"><img src="images/pinkall.png"/></div>
+        <div class="modal_text">
+          <h3>Voucher</h3>
+          <span>항공, 호텔, 면세점에서 사용 가능한 the Green 바우처<br/>
+                  (연간 최대 50만원)</span>
+          <h3>M Point</h3>
+          <span>여행·고메·해외 영역 5% M포인트 특별 적립
+                  이용실적에 따라 매년 7만 M포인트 보너스 리워드 제공<br/>
+                  (연회비 감면 중 택1)</span>
+          <h3>Premium service</h3>
+          <span>the Green 회원만을 위한 특별한 전용 혜택<br/>
+                  공항라운지 무료 이용서비스 및 메탈 플레이트 제공</span>
+          </div>
+      </div>
+    </div>
+    
+    <script>
+      // Modal을 가져옵니다.
+      var modals = document.getElementsByClassName('modal');
+      // Modal을 띄우는 클래스 이름을 가져옵니다.
+      var btns = document.getElementsByClassName('btn');
+      // Modal을 닫는 close 클래스를 가져옵니다.
+      var spanes = document.getElementsByClassName('close');
+      var funcs = [];
+
+      // Modal을 띄우고 닫는 클릭 이벤트를 정의한 함수
+      function Modal(num) {
+        return function () {
+          // 해당 클래스의 내용을 클릭하면 Modal을 띄웁니다.
+          btns[num].onclick = function () {
+            modals[num].style.display = 'block';
+            console.log(num);
+          };
+
+          // <span> 태그(X 버튼)를 클릭하면 Modal이 닫습니다.
+          spanes[num].onclick = function () {
+            modals[num].style.display = 'none';
+          };
+        };
+      }
+
+      // 원하는 Modal 수만큼 Modal 함수를 호출해서 funcs 함수에 정의합니다.
+      for (var i = 0; i < btns.length; i++) {
+        funcs[i] = Modal(i);
+      }
+
+      // 원하는 Modal 수만큼 funcs 함수를 호출합니다.
+      for (var j = 0; j < btns.length; j++) {
+        funcs[j]();
+      }
+
+      // Modal 영역 밖을 클릭하면 Modal을 닫습니다.
+      window.onclick = function (event) {
+        if (event.target.className == 'modal') {
+          event.target.style.display = 'none';
+        }
+      };
+    </script>
+  </body>
+</html>
