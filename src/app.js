@@ -4,6 +4,7 @@ var elementimg = document.querySelectorAll('.gallery_box_in img');
 var wheelcounter = 0;
 var counter = 0;
 
+// 마우스 휠 다운시 카드가 넘어가는 이벤트
 window.addEventListener('load', function () {
   window.addEventListener('wheel', function (e) {
     if (e.wheelDelta === -120) {
@@ -17,6 +18,7 @@ window.addEventListener('load', function () {
   });
 });
 
+// 마우스 휠 다운시 카드이미지배열의 wheelcounter순번 이미지의 alt값이 상단제목에 표시됨
 window.addEventListener('load', function () {
   setTimeout(function () {
     cardname.innerText = elementimg[wheelcounter].getAttribute('alt');

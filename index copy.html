@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>현대카드 - 카드 안내</title>
+    <!-- 폰트어썸CDN -->
+    <script
+      src="https://kit.fontawesome.com/202b04662c.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .before {
+        width: 100%;
+        height: 100px;
+        display: block;
+        position: relative;
+      }
+      .before > button {
+        background-color: transparent;
+        font-size: 20px;
+        border: 6px solid black;
+        border-radius: 0 15px 0 15px;
+        cursor: pointer;
+      }
+      .sub-container {
+        width: 100%;
+        height: 100%;
+        display: none;
+      }
+      #header {
+        width: 100%;
+        height: 100%;
+      }
+      #header > img {
+        width: 50%;
+      }
+    </style>
+    <script>
+      var deck = {
+        green: {
+          타이틀: 'the Green Edition2',
+          요약: 'My First Luxury',
+          설명: '자유와 모험을 즐기는, 나의 첫 럭셔리 카드 국내외 여행·해외쇼핑 5% 적립',
+        },
+        red: {
+          타이틀: 'the Red Edition5',
+          요약: 'My Hot Luxury',
+          설명: '럭셔리 라이프스타일을 매순간 더 핫하게 20만원 프리미엄 바우처',
+        },
+        black: {
+          타이틀: '현대카드 MX Black',
+          요약: '혜택의 블랙 라벨',
+          설명: 'M의 전 영역 적립과 X의 10% 할인을 동시에',
+        },
+      }; ///////// lang 객체 ///////
+
+      window.addEventListener('load', () => {
+        // 버튼을 누를때 해당 버튼 data-id에 따라 텍스트 변경
+
+        // 이벤트대상
+        let btns = document.querySelectorAll('.btns button');
+        // 변경대상
+        let title = document.querySelector('#header h1');
+        let mimg = document.querySelector('#header img');
+        let summary = document.querySelector('#header span');
+        let desc = document.querySelector('#header p');
+
+        const before = document.querySelector('.before');
+        const sub = document.querySelector('.sub-container');
+        // 버튼마다 이벤트리스너 등록
+        for (let i = 0; i < btns.length; i++) {
+          btns[i].addEventListener('click', () => {
+            // 버튼갯수 출력
+            console.log('버튼갯수', [i]);
+            // data-id 출력
+            let id = event.currentTarget.dataset.id;
+            console.log('data-id', id);
+            // id에 따른 객체 데이터 읽어오기
+            let data = deck[id];
+            console.log('데이터:', data);
+            // 메인이미지 변경하기
+            mimg.src = `images/${id}all.png`;
+
+            title.innerText = data['타이틀'];
+            summary.innerText = data['요약'];
+            desc.innerText = data['설명'];
+
+            sub.style = 'display:block';
+          });
+        }
+        before.addEventListener('click', () => {
+          sub.style = 'display:none';
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="before">
+      <button>이전으로</button>
+    </div>
+    <div id="btns" class="btns">
+      <button data-id="green">
+        <img src="images/green1.png" alt="the Green Edition2" />
+      </button>
+      <button data-id="red">
+        <img src="images/red1.png" alt="the Green Edition2" />
+      </button>
+      <button data-id="black">
+        <img src="images/black1.png" alt="the Green Edition2" />
+      </button>
+    </div>
+
+    <div class="sub-container">
+      <header id="header">
+        <img src="" />
+        <span></span>
+        <h1></h1>
+        <p></p>
+        <button>신청하기</button>
+        <!-- <div>
+          <span>연회비</span><br />
+          <span>국내전용</span><span></span><br />
+          <span>MasterCard</span><span></span><br />
+          <span>VISA</span><span></span><br />
+        </div> -->
+      </header>
+
+      <main id="main">
+        <article class="sub-main-ar1">
+          <h4></h4>
+          <div class="ar1-card"><img /><span></span></div>
+        </article>
+        <article class="sub-main-ar2">
+          <div class="ar2-txt">
+            <h2></h2>
+            <span></span>
+            <p></p>
+            <span></span>
+            <p></p>
+            <span></span>
+            <p></p>
+            <span></span>
+            <p></p>
+          </div>
+          <div class="ar2-img">
+            <img />
+          </div>
+        </article>
+      </main>
+      <footer id="footer"></footer>
+    </div>
+  </body>
+</html>
