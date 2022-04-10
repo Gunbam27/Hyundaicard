@@ -22,11 +22,13 @@ function Modal(num) {
 }
 
 // 원하는 Modal 수만큼 Modal 함수를 호출해서 funcs 함수에 정의합니다.
+// funcs=[Modal(0),[Modal(1),[Modal(2).....[Modal(8)]
 for (var i = 0; i < btns.length; i++) {
   funcs[i] = Modal(i);
 }
 
 // 원하는 Modal 수만큼 funcs 함수를 호출합니다.
+// funcs[0](); funcs[1](); funcs[2]();.....funcs[8]();
 for (var j = 0; j < btns.length; j++) {
   funcs[j]();
 }
