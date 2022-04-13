@@ -3,7 +3,14 @@
   font-family: YouandiModernTR;
   src: url(../fonts/YouandiModernTR.woff) format('woff');
 }
-
+@font-face {
+  font-family: AppleSDGothicNeoM;
+  src: url(../fonts/AppleSDGothicNeoM.woff) format('woff');
+}
+@font-face {
+  font-family: AppleSDGothicNeoL;
+  src: url(../fonts/AppleSDGothicNeoL.woff) format('woff');
+}
 html,
 body,
 h1,

@@ -14,7 +14,7 @@
     <style>
       .before {
         width: 100%;
-        height: 100px;
+        height: 65px;
         display: block;
         position: relative;
       }
@@ -33,11 +33,54 @@
         display: none;
       }
       #header {
+        display:flex;
         width: 100%;
         height: 100%;
+        position: absolute;
+        top: -158px;
       }
-      #header > img {
-        width: 50%;
+      .header-img{
+        width: 65%;
+        height: calc(100vh - 65px);
+      }
+      .header-img img{
+        object-fit: cover;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        left: -75px;
+      }
+      .header-txt{
+        position:relative;
+        top: 240px;
+        width: 40%;
+        padding-right: 72px;
+      }
+      .header-txt>span{
+        font-family:AppleSDGothicNeoM;
+        font-size: 20px;
+        line-height: 48px;
+      }
+      .header-txt>h1{
+        font-size: 6vh;
+        line-height: 82px;
+      }
+      .header-txt>p{
+        font-family: AppleSDGothicNeoL;
+        font-size: 20px;
+        line-height: 12px;
+      }
+      .header-txt>button{
+        width: 110px;
+        height: 50px;
+        padding: 12px;
+        font-size: 16px;
+        background-color:black;
+        color:white;
+        font-family:AppleSDGothicNeoM;
+        font-weight: bold;
+        border:none;
+        border-radius:10px;
       }
     </style>
   </head>
@@ -110,278 +153,20 @@
           </div>
         </div>
       </div>
-      <!-- 첫 번째 Modal -->
-      <div class="modal">
-        <!-- 첫 번째 Modal의 내용 -->
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <div class="img">
-            <img
-              src="images/greenall.png"
-              alt="the Green Edition2 모든 디자인"
-            />
-          </div>
-          <div class="modal_text">
-            <h3>Voucher</h3>
-            <span
-              >항공, 호텔, 면세점에서 사용 가능한 the Green 바우처<br />
-              (연간 최대 50만원)</span
-            >
-            <h3>M Point</h3>
-            <span
-              >여행·고메·해외 영역 5% M포인트 특별 적립 이용실적에 따라 매년 7만
-              M포인트 보너스 리워드 제공<br />
-              (연회비 감면 중 택1)</span
-            >
-            <h3>Premium service</h3>
-            <span
-              >the Green 회원만을 위한 특별한 전용 혜택<br />
-              공항라운지 무료 이용서비스 및 메탈 플레이트 제공</span
-            >
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 두 번째 Modal -->
-    <div class="modal">
-      <!-- 두 번째 Modal의 내용 -->
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <div class="img">
-          <img src="images/redall.png" alt="the Red Edition5 모든 디자인" />
-        </div>
-        <div class="modal_text">
-          <h3>Voucher</h3>
-          <span
-            >항공, 호텔, 면세점에서 사용 가능한 the Green 바우처<br />
-            (연간 최대 50만원)</span
-          >
-          <h3>M Point</h3>
-          <span
-            >여행·고메·해외 영역 5% M포인트 특별 적립 이용실적에 따라 매년 7만
-            M포인트 보너스 리워드 제공<br />
-            (연회비 감면 중 택1)</span
-          >
-          <h3>Premium service</h3>
-          <span
-            >the Green 회원만을 위한 특별한 전용 혜택<br />
-            공항라운지 무료 이용서비스 및 메탈 플레이트 제공</span
-          >
-        </div>
-      </div>
-    </div>
-
-    <!-- 세 번째 Modal -->
-    <div class="modal">
-      <!-- 세 번째 Modal의 내용 -->
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <div class="img">
-          <img src="images/pinkall.png" alt="the Pink 모든 디자인" />
-        </div>
-        <div class="modal_text">
-          <h3>Voucher</h3>
-          <span
-            >항공, 호텔, 면세점에서 사용 가능한 the Green 바우처<br />
-            (연간 최대 50만원)</span
-          >
-          <h3>M Point</h3>
-          <span
-            >여행·고메·해외 영역 5% M포인트 특별 적립 이용실적에 따라 매년 7만
-            M포인트 보너스 리워드 제공<br />
-            (연회비 감면 중 택1)</span
-          >
-          <h3>Premium service</h3>
-          <span
-            >the Green 회원만을 위한 특별한 전용 혜택<br />
-            공항라운지 무료 이용서비스 및 메탈 플레이트 제공</span
-          >
-        </div>
-      </div>
-    </div>
-
-    <!-- 네 번째 Modal -->
-    <div class="modal">
-      <!-- 네 번째 Modal의 내용 -->
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <div class="img">
-          <img src="images/violall.png" alt="the Purple osée 모든 디자인" />
-        </div>
-        <div class="modal_text">
-          <h3>Voucher</h3>
-          <span
-            >항공, 호텔, 면세점에서 사용 가능한 the Green 바우처<br />
-            (연간 최대 50만원)</span
-          >
-          <h3>M Point</h3>
-          <span
-            >여행·고메·해외 영역 5% M포인트 특별 적립 이용실적에 따라 매년 7만
-            M포인트 보너스 리워드 제공<br />
-            (연회비 감면 중 택1)</span
-          >
-          <h3>Premium service</h3>
-          <span
-            >the Green 회원만을 위한 특별한 전용 혜택<br />
-            공항라운지 무료 이용서비스 및 메탈 플레이트 제공</span
-          >
-        </div>
-      </div>
-    </div>
-
-    <!-- 다섯 번째 Modal -->
-    <div class="modal">
-      <!-- 다섯 번째 Modal의 내용 -->
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <div class="img">
-          <img src="images/famall.png" alt="Z family 모든 디자인" />
-        </div>
-        <div class="modal_text">
-          <h3>Voucher</h3>
-          <span
-            >항공, 호텔, 면세점에서 사용 가능한 the Green 바우처<br />
-            (연간 최대 50만원)</span
-          >
-          <h3>M Point</h3>
-          <span
-            >여행·고메·해외 영역 5% M포인트 특별 적립 이용실적에 따라 매년 7만
-            M포인트 보너스 리워드 제공<br />
-            (연회비 감면 중 택1)</span
-          >
-          <h3>Premium service</h3>
-          <span
-            >the Green 회원만을 위한 특별한 전용 혜택<br />
-            공항라운지 무료 이용서비스 및 메탈 플레이트 제공</span
-          >
-        </div>
-      </div>
-    </div>
-
-    <!-- 여섯 번째 Modal -->
-    <div class="modal">
-      <!-- 여섯 번째 Modal의 내용 -->
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <div class="img">
-          <img src="images/mbooall.png" alt="M BOOST 모든 디자인" />
-        </div>
-        <div class="modal_text">
-          <h3>Voucher</h3>
-          <span
-            >항공, 호텔, 면세점에서 사용 가능한 the Green 바우처<br />
-            (연간 최대 50만원)</span
-          >
-          <h3>M Point</h3>
-          <span
-            >여행·고메·해외 영역 5% M포인트 특별 적립 이용실적에 따라 매년 7만
-            M포인트 보너스 리워드 제공<br />
-            (연회비 감면 중 택1)</span
-          >
-          <h3>Premium service</h3>
-          <span
-            >the Green 회원만을 위한 특별한 전용 혜택<br />
-            공항라운지 무료 이용서비스 및 메탈 플레이트 제공</span
-          >
-        </div>
-      </div>
-    </div>
-
-    <!-- 일곱 번째 Modal -->
-    <div class="modal">
-      <!-- 일곱 번째 Modal의 내용 -->
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <div class="img">
-          <img src="images/xbooall.png" alt="X BOOST 모든 디자인" />
-        </div>
-        <div class="modal_text">
-          <h3>Voucher</h3>
-          <span
-            >항공, 호텔, 면세점에서 사용 가능한 the Green 바우처<br />
-            (연간 최대 50만원)</span
-          >
-          <h3>M Point</h3>
-          <span
-            >여행·고메·해외 영역 5% M포인트 특별 적립 이용실적에 따라 매년 7만
-            M포인트 보너스 리워드 제공<br />
-            (연회비 감면 중 택1)</span
-          >
-          <h3>Premium service</h3>
-          <span
-            >the Green 회원만을 위한 특별한 전용 혜택<br />
-            공항라운지 무료 이용서비스 및 메탈 플레이트 제공</span
-          >
-        </div>
-      </div>
-    </div>
-
-    <!-- 여덟 번째 Modal -->
-    <div class="modal">
-      <!-- 여덟 번째 Modal의 내용 -->
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <div class="img">
-          <img src="images/naverall.png" alt="네이버 현대카드 모든 디자인" />
-        </div>
-        <div class="modal_text">
-          <h3>Voucher</h3>
-          <span
-            >항공, 호텔, 면세점에서 사용 가능한 the Green 바우처<br />
-            (연간 최대 50만원)</span
-          >
-          <h3>M Point</h3>
-          <span
-            >여행·고메·해외 영역 5% M포인트 특별 적립 이용실적에 따라 매년 7만
-            M포인트 보너스 리워드 제공<br />
-            (연회비 감면 중 택1)</span
-          >
-          <h3>Premium service</h3>
-          <span
-            >the Green 회원만을 위한 특별한 전용 혜택<br />
-            공항라운지 무료 이용서비스 및 메탈 플레이트 제공</span
-          >
-        </div>
-      </div>
-    </div>
-
-    <!--아홉 번째 Modal -->
-    <div class="modal">
-      <!-- 아홉 번째 Modal의 내용 -->
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <div class="img">
-          <img src="images/blackall.png" alt="MX Black 모든 디자인" />
-        </div>
-        <div class="modal_text">
-          <h3>Voucher</h3>
-          <span
-            >항공, 호텔, 면세점에서 사용 가능한 the Green 바우처<br />
-            (연간 최대 50만원)</span
-          >
-          <h3>M Point</h3>
-          <span
-            >여행·고메·해외 영역 5% M포인트 특별 적립 이용실적에 따라 매년 7만
-            M포인트 보너스 리워드 제공<br />
-            (연회비 감면 중 택1)</span
-          >
-          <h3>Premium service</h3>
-          <span
-            >the Green 회원만을 위한 특별한 전용 혜택<br />
-            공항라운지 무료 이용서비스 및 메탈 플레이트 제공</span
-          >
-        </div>
-      </div>
-    </div>
-
+      
     <div class="sub-container">
       <header id="header">
-        <img src="" />
-        <span></span>
-        <h1></h1>
-        <p></p>
-        <button>신청하기</button>
+        <div class="header-img"><img src="" /></div>
+        <div class="header-txt">
+          <span></span>
+          <h1></h1>
+          <p></p>
+          <p></p>
+          <p></p>
+          <button>신청하기</button>
+      </div>
+        
+        
         <!-- <div>
           <span>연회비</span><br />
           <span>국내전용</span><span></span><br />
