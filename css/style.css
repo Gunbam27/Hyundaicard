@@ -48,7 +48,8 @@ span {
   animation: showContents 0.5s ease-in 3s forwards;
 }
 .logo > img {
-  width: 10em;
+  width: 137px;
+  
   position: absolute;
   top: 15px;
   left: 15px;

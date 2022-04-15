@@ -12,20 +12,36 @@
     ></script>
     <link rel="stylesheet" href="css/style.css" />
     <style>
+      ol,ul,li{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
       .before {
+        background-color: black;
+        text-align: center;
         width: 100%;
         height: 65px;
         display: block;
         position: relative;
-      }
-      .before > button {
-        background-color: transparent;
-        font-size: 20px;
-        border: 6px solid black;
-        border-radius: 0 15px 0 15px;
         cursor: pointer;
-        position: absolute;
-        right: 0;
+        margin-bottom: 3px;
+      }
+      .before>span{
+        vertical-align: middle;
+        font-size: 50px;
+        color: white;
+        line-height: 68px;
+      }
+      .btnblack{
+        padding: 12px;
+        font-size: 16px;
+        background-color:black;
+        color:white;
+        border:none;
+        border-radius:10px;
+        font-weight: bold;
+        cursor: pointer;
       }
       .sub-container {
         width: 100%;
@@ -33,60 +49,93 @@
         display: none;
       }
       #header {
-        display:flex;
         width: 100%;
         height: 100%;
         position: absolute;
         top: -158px;
       }
       .header-img{
-        width: 65%;
+        display: inline-block;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        width: 63%;
         height: calc(100vh - 65px);
       }
-      .header-img img{
-        object-fit: cover;
-        position: relative;
-        width: 100%;
-        height: 100%;
-        left: -75px;
-      }
+      
       .header-txt{
-        position:relative;
-        top: 240px;
-        width: 40%;
-        padding-right: 72px;
+        padding: 12% 0 0 5%;
+        display: inline-block;
+        width: 30%;
+        vertical-align: top;
+        margin: 0 auto;
       }
-      .header-txt>span{
+      .bold-font{
         font-family:AppleSDGothicNeoM;
-        font-size: 20px;
-        line-height: 48px;
       }
-      .header-txt>h1{
-        font-size: 6vh;
+      .light-font{
+        font-family: AppleSDGothicNeoL;
+      }
+      .feetxt>span{
+        font-size: 20px;
+      }
+      .feetxt>h1{
+        font-size: 5vh;
         line-height: 82px;
       }
-      .header-txt>p{
-        font-family: AppleSDGothicNeoL;
-        font-size: 20px;
+      .feetxt>p{
+        font-size: 18px;
         line-height: 12px;
       }
-      .header-txt>button{
+      .subbtn{
+        margin-top: 20px;
         width: 110px;
         height: 50px;
-        padding: 12px;
+        /* padding: 12px;
         font-size: 16px;
         background-color:black;
         color:white;
-        font-family:AppleSDGothicNeoM;
-        font-weight: bold;
         border:none;
         border-radius:10px;
+        font-weight: bold; */
+      }
+      .memberfee{
+        width: 290px;
+        margin-top: 56px;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 30px;
+        line-height:14px;
+      }
+      .memberfee > .fee{
+        font-size: 15px;
+        margin: 7px 0;
+      }
+      .fee::after{
+        content: ">";
+       float: right;
+      }
+      .memberfee li{
+        height: 30px;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .memberfee li span{
+        font-size: 15px;
+        display: inline-block;
+        color: #666;
+      }
+      .memberfee li p{
+        font-size: 15px;
+        display: inline-block;
       }
     </style>
   </head>
   <body>
     <div class="before">
-      <button>이전으로</button>
+      <span>To List</span>
     </div>
     <div class="loader-wrap">
       <div class="loading-logo loading-logo-one"></div>
@@ -156,25 +205,27 @@
       
     <div class="sub-container">
       <header id="header">
-        <div class="header-img"><img src="" /></div>
+        <div class="header-img"></div>
         <div class="header-txt">
-          <span></span>
-          <h1></h1>
-          <p></p>
-          <p></p>
-          <p></p>
-          <button>신청하기</button>
-      </div>
-        
-        
-        <!-- <div>
-          <span>연회비</span><br />
-          <span>국내전용</span><span></span><br />
-          <span>MasterCard</span><span></span><br />
-          <span>VISA</span><span></span><br />
-        </div> -->
+          <div class="feetxt">
+            <span class="bold-font"></span>
+            <h1></h1>
+            <p class="light-font"></p>
+            <p class="light-font"></p>
+            <p class="light-font"></p>
+            <button  class="btnblack bold-font subbtn">신청하기</button>
+          </div>
+          <div class="memberfee bold-font">
+            <div class="fee">연회비</div>
+            <ul>
+              <li><span>VISA</span><p></p></li>
+              <li><span>MasterCard</span><p></p></li>
+              <li><span>국내전용</span><p></p></li>
+            </ul>
+          </div>
+        </div>
       </header>
-
+    </div>
       <main id="main">
         <article class="sub-main-ar1">
           <h4></h4>
