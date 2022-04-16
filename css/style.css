@@ -1,15 +1,15 @@
 @charset "utf-8";
 @font-face {
   font-family: YouandiModernTR;
-  src: url(../fonts/YouandiModernTR.woff) format('woff');
+  src: url(../fonts/YouandiModernTR.woff) format("woff");
 }
 @font-face {
   font-family: AppleSDGothicNeoM;
-  src: url(../fonts/AppleSDGothicNeoM.woff) format('woff');
+  src: url(../fonts/AppleSDGothicNeoM.woff) format("woff");
 }
 @font-face {
   font-family: AppleSDGothicNeoL;
-  src: url(../fonts/AppleSDGothicNeoL.woff) format('woff');
+  src: url(../fonts/AppleSDGothicNeoL.woff) format("woff");
 }
 html,
 body,
@@ -24,7 +24,9 @@ h6 {
   padding: 0;
   margin: 0;
 }
-ol,ul,ii{
+ol,
+ul,
+ii {
   padding: 0;
   margin: 0;
   list-style: none;
@@ -45,6 +47,12 @@ span {
   line-height: 1.2em;
   font-size: 1.2em;
 }
+.bf {
+  font-family: AppleSDGothicNeoM;
+}
+.lf {
+  font-family: AppleSDGothicNeoL;
+}
 /*************************************************/
 /* 이전버튼 */
 .before {
@@ -56,21 +64,21 @@ span {
   position: relative;
   cursor: pointer;
   margin-bottom: 3px;
-  display:none;
+  display: none;
 }
-.before>span{
+.before > span {
   vertical-align: middle;
   font-size: 50px;
   color: white;
   line-height: 68px;
 }
-.btnblack{
+.btnblack {
   padding: 12px;
   font-size: 16px;
-  background-color:black;
-  color:white;
-  border:none;
-  border-radius:10px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 10px;
   font-weight: bold;
   cursor: pointer;
 }
@@ -118,7 +126,6 @@ span {
   transition: all 1s ease-out;
   transform: perspective(1300px) rotateX(0deg) rotateY(0deg);
   transform-style: preserve-3d;
-  
 }
 .gallery_box_in {
   width: 100%;
@@ -133,6 +140,7 @@ span {
   border: none;
   cursor: pointer;
 }
+
 .gallery_box_in:nth-child(1) {
   transform: rotateY(0deg) translateZ(450px);
 }
@@ -161,20 +169,20 @@ span {
   transform: rotateY(320deg) translateZ(450px);
 }
 
-
 /* 서브페이지 */
+/* sub1 */
 .sub-container {
   width: 100%;
   height: 100%;
   display: none;
 }
-#header {
+#sub1 {
   width: 100%;
   height: 100%;
   position: absolute;
   top: -158px;
 }
-.header-img{
+.sub-img {
   display: inline-block;
   background-repeat: no-repeat;
   background-position: center center;
@@ -183,64 +191,84 @@ span {
   height: calc(100vh - 65px);
 }
 
-.header-txt{
+.sub-txt {
   padding: 12% 0 0 5%;
   display: inline-block;
   width: 30%;
   vertical-align: top;
   margin: 0 auto;
 }
-.bold-font{
-  font-family:AppleSDGothicNeoM;
-}
-.light-font{
-  font-family: AppleSDGothicNeoL;
-}
-.feetxt>span{
+
+.feetxt > span {
   font-size: 20px;
 }
-.feetxt>h1{
+.feetxt > h1 {
   font-size: 5vh;
   line-height: 82px;
 }
-.feetxt>p{
+.feetxt > p {
   font-size: 18px;
   line-height: 12px;
 }
-.subbtn{
+.subbtn {
   margin-top: 20px;
   width: 110px;
   height: 50px;
 }
-.memberfee{
+.memberfee {
   width: 290px;
   margin-top: 56px;
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 30px;
-  line-height:14px;
+  line-height: 14px;
 }
-.memberfee > .fee{
+.memberfee > .fee {
   font-size: 15px;
   margin: 7px 0;
 }
-.fee::after{
+.fee::after {
   content: ">";
- float: right;
+  float: right;
 }
-.memberfee li{
+.memberfee li {
   height: 30px;
   list-style: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.memberfee li span{
+.memberfee li span {
   font-size: 15px;
   display: inline-block;
   color: #666;
 }
-.memberfee li p{
+.memberfee li p {
   font-size: 15px;
   display: inline-block;
+}
+/* sub2 */
+#sub2 {
+  width: 100%;
+  height: 1000px;
+  outline: 1px solid lime;
+  position: relative;
+  top: 715px;
+  text-align: center;
+}
+.sub2-txt {
+  height: 300px;
+  font-size: 34px;
+  margin: 0 20px;
+}
+.sub2-img-box ul {
+  display: flex;
+  justify-content: center;
+}
+.sub2-img-box li {
+  margin: 0 30px;
+}
+.sub2-img-box li img {
+  width: 174px;
+  height: 275px;
 }
