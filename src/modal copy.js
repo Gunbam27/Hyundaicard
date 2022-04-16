@@ -22,9 +22,7 @@ function Modal(num) {
   return function () {
     // 해당 클래스의 내용을 클릭하면 Modal을 띄웁니다.
     btns[num].onclick = function () {
-      // 갤러리컨테이너내용숨기기
-      gallery.style.display = 'none';
-      cardname.style.display = 'none';
+      
 
       // data-id 출력
       let id = btns[num].dataset.id;
@@ -34,7 +32,6 @@ function Modal(num) {
       console.log('데이터:', data);
 
       // data-id에따라 바뀌는 내용
-      // mimg.style.backgroundImage=url(`'images/${id}all.png'`);
       mimg.style.backgroundImage =`url(images/${id}all.png)`;
       title.innerText = data['타이틀'];
       summary.innerText = data['요약'];
@@ -44,9 +41,13 @@ function Modal(num) {
       data['요금'].forEach((val, idx) => {
         memberfee[idx].innerText = val;
       });
-      /////////////////////
+      ////////// 숨기고 보이기  //////////
+      gallery.style.display = 'none';
+      cardname.style.display = 'none';
       sub.style = 'display:block';
+      before.style='display:block';
       before.addEventListener('click', () => {
+        before.style='display:none';
         sub.style = 'display:none';
         gallery.style.display = 'block';
         cardname.style.display = 'block';
