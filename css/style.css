@@ -24,9 +24,12 @@ h6 {
   padding: 0;
   margin: 0;
 }
+body * {
+  outline: 1px solid lime;
+}
 ol,
 ul,
-ii {
+li {
   padding: 0;
   margin: 0;
   list-style: none;
@@ -53,7 +56,20 @@ span {
 .lf {
   font-family: AppleSDGothicNeoL;
 }
-/*************************************************/
+/*****************1.상단영역*******************/
+header {
+  height: 65px;
+}
+/* 상단로고 */
+
+.logo {
+  width: 152px;
+  height: 65px;
+}
+.logo > img {
+  width: 137px;
+  margin: 18px 8px 18px 8px;
+}
 /* 이전버튼 */
 .before {
   background-color: black;
@@ -61,9 +77,10 @@ span {
   width: 100%;
   height: 65px;
   display: block;
-  position: relative;
+  position: absolute;
   cursor: pointer;
   margin-bottom: 3px;
+  top: 0;
   display: none;
 }
 .before > span {
@@ -82,26 +99,11 @@ span {
   font-weight: bold;
   cursor: pointer;
 }
-/* 상단로고 */
-
-.logo {
-  width: 100%;
-}
-.logo > img {
-  width: 137px;
-  position: absolute;
-  top: 15px;
-  left: 15px;
-}
-/* 카드이름 */
-.card_name {
-  display: block;
-  width: 100%;
-  position: relative;
-  top: 155px;
-}
+/*카드이름*/
 .card {
-  position: absolute;
+  box-sizing: border-box;
+  padding: 37px 0;
+  height: 150px;
   text-align: center;
   width: 100%;
 }
@@ -111,11 +113,10 @@ span {
   display: flex;
   width: 100%;
   position: relative;
-  top: -45px;
 }
 .gallery_box {
   position: absolute;
-  transform: translate(-50%, 85%);
+  transform: translate(-50%, 67%);
   left: 50%;
 }
 
@@ -179,8 +180,6 @@ span {
 #sub1 {
   width: 100%;
   height: 100%;
-  position: absolute;
-  top: -158px;
 }
 .sub-img {
   display: inline-block;
@@ -253,22 +252,25 @@ span {
   height: 1000px;
   outline: 1px solid lime;
   position: relative;
-  top: 715px;
   text-align: center;
 }
 .sub2-txt {
   height: 300px;
   font-size: 34px;
-  margin: 0 20px;
+  padding: 100px;
+  box-sizing: border-box;
 }
 .sub2-img-box ul {
   display: flex;
   justify-content: center;
 }
 .sub2-img-box li {
+  display: flex;
   margin: 0 30px;
+  flex-direction: column;
 }
 .sub2-img-box li img {
   width: 174px;
   height: 275px;
+  margin: 15px 0;
 }

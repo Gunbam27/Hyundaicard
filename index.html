@@ -16,26 +16,20 @@
     ></script>
   </head>
   <body>
-    <!-- 이전으로 -->
-    <div class="before">
-      <span>To List</span>
-    </div>
-    <!-- 로딩 -->
-    <div class="loader-wrap">
+    <header>
+      <!-- 로딩 -->
       <div class="loading-logo loading-logo-one"></div>
-    </div>
-    <!-- 상단로고 -->
-    <div id="logo" class="logo">
-      <img src="images/logoblack.png" alt="현대카드 로고" />
-    </div>
-    <!-- 에디션 이름 -->
-    <div class="card_name">
-      <div class="card">
-        <h1></h1>
+      <!-- 상단로고 -->
+      <div id="logo" class="logo">
+        <img src="images/logoblack.png" alt="현대카드 로고" />
       </div>
-
-     <!-- 카드 갤러리 -->
-     <div class="gallery_container">
+      <!-- 이전으로 -->
+      <div class="before lf"><span>To List</span></div>
+    </header>
+    <!-- 카드 이름 -->
+    <div class="card"><h1></h1></div>
+    <!-- 카드 갤러리 -->
+    <div class="gallery_container">
       <div class="gallery_box">
         <div class="gallery_box_outer">
           <div class="gallery_box_in green">
@@ -86,52 +80,51 @@
         </div>
       </div>
     </div>
-      <!-- 서브페이지 -->
-      <div class="sub-container">
-        <div id="sub1">
-          <div class="sub-img"></div>
-          <div class="sub-txt">
-            <div class="feetxt">
-              <span class="bf"></span>
-              <h1></h1>
-              <p class="lf"></p>
-              <p class="lf"></p>
-              <p class="lf"></p>
-              <button  class="btnblack bf subbtn">신청하기</button>
-            </div>
-            <div class="memberfee bf">
-              <div class="fee">연회비</div>
-              <ul>
-                <li><span>VISA</span><p></p></li>
-                <li><span>MasterCard</span><p></p></li>
-                <li><span>국내전용</span><p></p></li>
-              </ul>
-            </div>
+    <!-- 서브페이지 -->
+    <div class="sub-container">
+      <div id="sub1">
+        <div class="sub-img"></div>
+        <div class="sub-txt">
+          <div class="feetxt">
+            <span class="bf"></span>
+            <h1></h1>
+            <p class="lf"></p>
+            <p class="lf"></p>
+            <p class="lf"></p>
+            <button class="btnblack bf subbtn">신청하기</button>
           </div>
-        </div>
-        <div id="sub2">
-          <div class="sub2-txt bf"></div>
-          <div class="sub2-img-box">
+          <div class="memberfee bf">
+            <div class="fee">연회비</div>
             <ul>
               <li>
-                <img /><span></span>
+                <span>VISA</span>
+                <p></p>
               </li>
               <li>
-                <img /><span></span>
+                <span>MasterCard</span>
+                <p></p>
               </li>
               <li>
-                <img /><span></span>
-              </li>
-              <li>
-                <img /><span></span>
-              </li>
-              <li>
-                <img /><span></span>
+                <span>국내전용</span>
+                <p></p>
               </li>
             </ul>
           </div>
         </div>
       </div>
+      <div id="sub2">
+        <div class="sub2-txt bf"></div>
+        <div class="sub2-img-box lf">
+          <ul>
+            <li><img /><span></span></li>
+            <li><img /><span></span></li>
+            <li><img /><span></span></li>
+            <li><img /><span></span></li>
+            <li><img /><span></span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
     <script src="src/app.js"></script>
     <script src="src/modal.js"></script>
   </body>

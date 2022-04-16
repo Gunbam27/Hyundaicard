@@ -2,6 +2,7 @@
 const btns = document.getElementsByClassName("btn");
 
 // 클릭하여 내용 바꾸기
+const cardnamebox = document.querySelector(".card");
 const gallery = document.querySelector(".gallery_container");
 const title = document.querySelector(".feetxt h1");
 const mimg = document.querySelector(".sub-img");
@@ -12,6 +13,7 @@ const before = document.querySelector(".before");
 const sub1 = document.querySelector(".sub-container");
 const sub2_txt = document.querySelector(".sub2-txt");
 const sub2_li = document.querySelectorAll(".sub2-img-box li img");
+const sub2_name = document.querySelectorAll(".sub2-img-box li span");
 let funcs = [];
 
 // Modal을 띄우고 닫는 클릭 이벤트를 정의한 함수
@@ -41,17 +43,20 @@ function Modal(num) {
       data["디자인"].forEach((val, idx) => {
         sub2_li[idx].src = `images/${val}`;
       });
+      data["디자인이름"].forEach((val, idx) => {
+        sub2_name[idx].innerText = val;
+      });
 
       ////////// 숨기고 보이기  //////////
       gallery.style.display = "none";
-      cardname.style.display = "none";
+      cardnamebox.style.display = "none";
       sub1.style = "display:block";
       before.style = "display:block";
       before.addEventListener("click", () => {
         before.style = "display:none";
         sub1.style = "display:none";
         gallery.style.display = "flex";
-        cardname.style.display = "block";
+        cardnamebox.style.display = "block";
       });
     };
   };
@@ -85,6 +90,7 @@ var deck = {
       "green4.png",
       "green5.png",
     ],
+    디자인이름: ["Monster", "Toxic", "Crack", "Mohican", "Satin"],
   },
   red: {
     타이틀: "the Red Edition5",
@@ -92,6 +98,7 @@ var deck = {
     설명: ["럭셔리 라이프스타일을 매순간 더 핫하게", "20만원 프리미엄 바우처"],
     요금: ["본인 300,000원", "본인 300,000원", "본인 300,000원"],
     디자인: ["red1.png", "red2.png", "red3.png", "red4.png", "red5.png"],
+    디자인이름: ["Enamel", "Fur", "Marker", "Satin", "Art Deco"],
   },
   pink: {
     타이틀: "the Pink",
@@ -99,6 +106,7 @@ var deck = {
     설명: ["프로쇼퍼들의 필수 럭셔리 카드", "프리미엄쇼핑·고메 5% 적립"],
     요금: ["본인 150,000원", "본인 150,000원", "본인 150,000원"],
     디자인: ["pink1.png", "pink2.png", "pink3.png", "pink4.png", "pink5.png"],
+    디자인이름: ["Glossy", "Stranger", "Lollipop", "Little Black Dress"],
   },
   purple: {
     타이틀: "the Purple osée",
@@ -110,6 +118,7 @@ var deck = {
     ],
     요금: ["본인 800,000원", "본인 800,000원", "본인 800,000원"],
     디자인: ["viol1.png", "viol2.png", "viol3.png"],
+    디자인이름: ["Jade", "Versailles", "Seine"],
   },
   fam: {
     타이틀: "현대카드Z family",
@@ -124,6 +133,15 @@ var deck = {
       "fam5.png",
       "fam6.png",
       "fam7.png",
+    ],
+    디자인이름: [
+      "Family Z",
+      "Clap Z",
+      "Sweet Z",
+      "Rolling Z",
+      "Block Z",
+      "Slate Z",
+      "Laser Z",
     ],
   },
   mboo: {
@@ -142,6 +160,17 @@ var deck = {
       "mboo8.png",
       "mboo9.png",
     ],
+    디자인이름: [
+      "M Fluffy",
+      "M Charger",
+      "M Steel",
+      "Bubble Wrap",
+      "Gummy Bear",
+      "Canvas",
+      "the Gear",
+      "the Can",
+      "the Coil",
+    ],
   },
   xboo: {
     타이틀: "현대카드 X BOOST",
@@ -158,6 +187,17 @@ var deck = {
       "xboo7.png",
       "xboo8.png",
       "xboo9.png",
+    ],
+    디자인이름: [
+      "X Fluffy",
+      "X Charger",
+      "X Steel",
+      "Bubble Wrap",
+      "Gummy Bear",
+      "Canvas",
+      "the Gear",
+      "the Can",
+      "the Coil",
     ],
   },
   naver: {
@@ -178,6 +218,7 @@ var deck = {
       "naver5.png",
       "naver6.png",
     ],
+    디자인이름: ["Line", "Type", "Joy", "Tube", "Blocks", "Core"],
   },
   black: {
     타이틀: "현대카드 MX Black",
@@ -191,6 +232,13 @@ var deck = {
       "black4.png",
       "black5.png",
       "black6.png",
+    ],
+    디자인이름: [
+      "Black & Black",
+      "Black & White",
+      "Black Board",
+      "Black Ink",
+      "Black Hole",
     ],
   },
 }; ///////// lang 객체 ///////
