@@ -12,7 +12,8 @@ const memberfee = document.querySelectorAll(".memberfee p");
 const before = document.querySelector(".before");
 const sub1 = document.querySelector(".sub-container");
 const sub2_txt = document.querySelector(".sub2-txt");
-const sub2_li = document.querySelectorAll(".sub2-img-box li img");
+const sub2_li = document.querySelector(".sub2-img-box li");
+const sub2_img = document.querySelectorAll(".sub2-img-box li img");
 const sub2_name = document.querySelectorAll(".sub2-img-box li span");
 let funcs = [];
 
@@ -23,10 +24,8 @@ function Modal(num) {
     btns[num].onclick = function () {
       // data-id 출력
       let id = btns[num].dataset.id;
-      console.log("data-id", id);
       // id에 따른 객체 데이터 읽어오기
       let data = deck[id];
-      console.log("데이터:", data);
 
       // data-id에따라 바뀌는 내용
       mimg.style.backgroundImage = `url(images/${id}all.png)`;
@@ -41,12 +40,12 @@ function Modal(num) {
         memberfee[idx].innerText = val;
       });
       data["디자인"].forEach((val, idx) => {
-        sub2_li[idx].src = `images/${val}`;
+        sub2_img[idx].src = `images/${val}`;
       });
       data["디자인이름"].forEach((val, idx) => {
         sub2_name[idx].innerText = val;
       });
-
+      ScaleFunction();
       ////////// 숨기고 보이기  //////////
       gallery.style.display = "none";
       cardnamebox.style.display = "none";
@@ -61,7 +60,6 @@ function Modal(num) {
     };
   };
 }
-
 // 원하는 Modal 수만큼 Modal 함수를 호출해서 funcs 함수에 정의합니다.
 // funcs=[Modal(0),[Modal(1),[Modal(2).....[Modal(8)]
 for (var i = 0; i < btns.length; i++) {
@@ -73,7 +71,23 @@ for (var i = 0; i < btns.length; i++) {
 for (var j = 0; j < btns.length; j++) {
   funcs[j]();
 }
-
+// 페이지2 영역에 스크롤시 카드가 작아지고 카드명이 커지는 효과.
+function ScaleFunction() {
+  window.addEventListener("scroll", () => {
+    const scrollPosition = document.documentElement.scrollTop;
+    if (scrollPosition >= "900") {
+      document.querySelector(".sub2-img-box ul").style.transform = "scale(0.8)";
+      for (var i = 0; i < sub2_name.length; i++) {
+        sub2_name[i].style.transform = "scale(1.4)";
+      }
+    } else {
+      document.querySelector(".sub2-img-box ul").style.transform = "scale(1)";
+      for (var i = 0; i < sub2_name.length; i++) {
+        sub2_name[i].style.transform = "scale(1)";
+      }
+    }
+  });
+}
 var deck = {
   green: {
     타이틀: "the Green Edition2",
@@ -231,7 +245,6 @@ var deck = {
       "black3.png",
       "black4.png",
       "black5.png",
-      "black6.png",
     ],
     디자인이름: [
       "Black & Black",
