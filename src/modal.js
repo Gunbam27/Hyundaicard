@@ -4,7 +4,7 @@ const btns = document.getElementsByClassName("btn");
 // 클릭하여 내용 바꾸기
 const cardnamebox = document.querySelector(".card");
 const gallery = document.querySelector(".gallery_container");
-const title = document.querySelector(".feetxt h1");
+const title = document.querySelector(".feetxt h2");
 const mimg = document.querySelector(".sub-img");
 const summary = document.querySelector(".feetxt span");
 const desc = document.querySelectorAll(".feetxt p");
@@ -12,9 +12,8 @@ const memberfee = document.querySelectorAll(".memberfee p");
 const before = document.querySelector(".before");
 const sub1 = document.querySelector(".sub-container");
 const sub2_txt = document.querySelector(".sub2-txt");
-const sub2_li = document.querySelector(".sub2-img-box li");
-const sub2_img = document.querySelectorAll(".sub2-img-box li img");
-const sub2_name = document.querySelectorAll(".sub2-img-box li span");
+// 상위 요소 박스만 잡고 안에 넣을 이미지와 span은 아래에서 코드생성함!
+const sub2_ibx = document.querySelector(".sub2-img-box");
 let funcs = [];
 
 // Modal을 띄우고 닫는 클릭 이벤트를 정의한 함수
@@ -39,12 +38,19 @@ function Modal(num) {
       data["요금"].forEach((val, idx) => {
         memberfee[idx].innerText = val;
       });
+      
+      // 코드 변수만들기 ///
+      let itemp="<ul>";
       data["디자인"].forEach((val, idx) => {
-        sub2_img[idx].src = `images/${val}`;
+        itemp += 
+        `<li>
+            <img src="images/${val}" alt="image">
+            <span>${data["디자인이름"][idx]}</span>
+        </li>`;
       });
-      data["디자인이름"].forEach((val, idx) => {
-        sub2_name[idx].innerText = val;
-      });
+      itemp += "</ul>";
+      // 대상요소에 코드 할당하기 //
+      sub2_ibx.innerHTML = itemp;
       ScaleFunction();
       ////////// 숨기고 보이기  //////////
       gallery.style.display = "none";
@@ -77,13 +83,13 @@ function ScaleFunction() {
     const scrollPosition = document.documentElement.scrollTop;
     if (scrollPosition >= "900") {
       document.querySelector(".sub2-img-box ul").style.transform = "scale(0.8)";
-      for (var i = 0; i < sub2_name.length; i++) {
-        sub2_name[i].style.transform = "scale(1.4)";
+      for (var i = 0; i < sub2_ibx.length; i++) {
+        sub2_ibx[i].querySelector("span").style.transform = "scale(1.4)";
       }
     } else {
       document.querySelector(".sub2-img-box ul").style.transform = "scale(1)";
-      for (var i = 0; i < sub2_name.length; i++) {
-        sub2_name[i].style.transform = "scale(1)";
+      for (var i = 0; i < sub2_ibx.length; i++) {
+        sub2_ibx[i].querySelector("span").style.transform = "scale(1)";
       }
     }
   });

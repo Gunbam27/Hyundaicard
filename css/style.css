@@ -11,7 +11,7 @@
   font-family: AppleSDGothicNeoL;
   src: url(../fonts/AppleSDGothicNeoL.woff) format("woff");
 }
-html,
+/* html,
 body,
 h1,
 h2,
@@ -33,28 +33,83 @@ li {
   padding: 0;
   margin: 0;
   list-style: none;
+} */
+:root{
+  /* color */
+  --color-black:#000;
+  --color-white:#fff;
+
+  /* size */
+  --font-large: 8vh;
+  --font-medium: 5vh;
+  --font-regular: 20px;
+  --font-small: 18px;
+  --font-micro: 16px;
+
+  /* Font weight */
+  --weight-bold: 700;
+  --weight-regular: 400;
 }
+/* Universal tags */
+
+body {
+  cursor: default;
+  font-weight: var(--weight-bold);
+  font-family: 'YouandiModernTR';
+}
+
+button {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+/* Typography */
+
 h1 {
-  font-size: 8vh;
+  font-size: var(--font-large);
+  color: var(--color-black);
+  margin: 16px 0px;
 }
+
 h2 {
-  line-height: 1.5em;
-  font-size: 2.5em;
+  font-size: var(--font-medium);
+  color: var(--color-black);
+  line-height: 82px;
+  margin: 8px 0;
 }
+
 h3 {
-  margin-top: 35px;
-  line-height: 2em;
-  font-size: 2.5em;
+  font-size: var(--font-regular);
+  font-weight: var(--weight-regular);
+  color: var(--color-black);
+  margin: 8px 0;
+}
+
+p {
+  font-size: var(--font-small);
+  color: var(--color-black);
+  margin: 4px 0;
 }
 span {
-  line-height: 1.2em;
-  font-size: 1.2em;
+  font-size: var(--font-regular);
+}
+.btnblack {
+  padding: 12px;
+  font-size: var(--font-micro);
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
 }
 .bf {
   font-family: AppleSDGothicNeoM;
+  font-weight: var(--weight-bold);
 }
 .lf {
   font-family: AppleSDGothicNeoL;
+  font-weight: var(--weight-bold);
 }
 /*****************1.상단영역*******************/
 header {
@@ -88,16 +143,6 @@ header {
   font-size: 50px;
   color: white;
   line-height: 68px;
-}
-.btnblack {
-  padding: 12px;
-  font-size: 16px;
-  background-color: black;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  font-weight: bold;
-  cursor: pointer;
 }
 /*카드이름*/
 .card {
@@ -198,17 +243,6 @@ header {
   margin: 0 auto;
 }
 
-.feetxt > span {
-  font-size: 20px;
-}
-.feetxt > h1 {
-  font-size: 5vh;
-  line-height: 82px;
-}
-.feetxt > p {
-  font-size: 18px;
-  line-height: 12px;
-}
 .subbtn {
   margin-top: 20px;
   width: 110px;
@@ -223,7 +257,7 @@ header {
   line-height: 14px;
 }
 .memberfee > .fee {
-  font-size: 15px;
+  font-size: var(--font-micro);
   margin: 7px 0;
 }
 .fee::after {
@@ -238,12 +272,12 @@ header {
   align-items: center;
 }
 .memberfee li span {
-  font-size: 15px;
+  font-size: var(--font-micro);
   display: inline-block;
   color: #666;
 }
 .memberfee li p {
-  font-size: 15px;
+  font-size: var(--font-micro);
   display: inline-block;
 }
 /* sub2 */
