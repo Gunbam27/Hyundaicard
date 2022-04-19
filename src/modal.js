@@ -14,6 +14,7 @@ const sub1 = document.querySelector(".sub-container");
 const sub2_txt = document.querySelector(".sub2-txt");
 // 상위 요소 박스만 잡고 안에 넣을 이미지와 span은 아래에서 코드생성함!
 const sub2_ibx = document.querySelector(".sub2-img-box");
+const s2span =document.querySelector(".s2span");
 let funcs = [];
 
 // Modal을 띄우고 닫는 클릭 이벤트를 정의한 함수
@@ -43,7 +44,7 @@ function Modal(num) {
       let itemp="<ul>";
       data["디자인"].forEach((val, idx) => {
         itemp += 
-        `<li>
+        `<li class="s2span">
             <img src="images/${val}" alt="image">
             <span>${data["디자인이름"][idx]}</span>
         </li>`;
@@ -83,11 +84,13 @@ function ScaleFunction() {
     const scrollPosition = document.documentElement.scrollTop;
     if (scrollPosition >= "900") {
       document.querySelector(".sub2-img-box ul").style.transform = "scale(0.8)";
+      // sub2_name 대신 sub2_ibx로 처리!
       for (var i = 0; i < sub2_ibx.length; i++) {
         sub2_ibx[i].querySelector("span").style.transform = "scale(1.4)";
       }
     } else {
       document.querySelector(".sub2-img-box ul").style.transform = "scale(1)";
+      // sub2_name 대신 sub2_ibx로 처리!
       for (var i = 0; i < sub2_ibx.length; i++) {
         sub2_ibx[i].querySelector("span").style.transform = "scale(1)";
       }

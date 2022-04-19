@@ -282,14 +282,13 @@ header {
 #sub2 {
   width: 100%;
   height: 1000px;
-  outline: 1px solid lime;
   position: relative;
   text-align: center;
 }
 .sub2-txt {
-  height: 300px;
+  height: 370px;
   font-size: 34px;
-  padding: 100px;
+  padding: 142px;
   box-sizing: border-box;
 }
 .sub2-img-box ul {
@@ -305,4 +304,112 @@ header {
   width: 174px;
   height: 275px;
   margin: 15px 0;
+}
+#sub3 {
+  margin: auto;
+  width: 1200px;
+  height: 1100px;
+  position: relative;
+  text-align: center;
+}
+.cont{
+  margin: 50px 0;
+}
+#sub3 .box{
+  margin: auto;
+  box-sizing: border-box;
+  padding: 40px;
+  width: 1200px;
+  height: 400px;
+  background-color: #f5f5f5;
+  border-radius: 15px;
+}
+.subt1{
+  margin-bottom: 15px;
+  padding-left: 40px;
+  text-align: left;
+  font-size: 3vh;
+}
+.subt2{
+  text-align: left;
+  font-size: 4vh;
+}
+.box ul{
+  display:flex;
+  justify-content: space-evenly;
+  margin: 40px;
+}
+.box ul li{
+  display:flex;
+  flex-direction: column;
+  height:112px;
+  align-items: center;
+}
+.box ul p{
+  margin:4px;
+  font-size: var(--font-micro);
+}
+.icon-box{
+  text-align: right;
+}
+.icon-box i{
+  color: #666;
+  font-size: 35px;
+}
+/* 하단영역 */
+footer{
+  width: 100%;
+  border-top: 1px solid black;
+}
+footer *{
+  font-size: 12px;
+}
+footer>.fcon{
+  display: flex;
+  flex-direction: row;
+  width: 1000px;
+  height:240px;
+  margin:0 auto;
+}
+.ft-list1{
+  display:flex;
+  flex-direction: column;
+  width:300px;
+  padding: 25px;
+}
+.ft-list1 strong{
+  font-family: AppleSDGothicNeoM;
+  text-align: right;
+  width:92px;
+  height:16px;
+  margin:auto;
+}
+.ft-list1 span{
+  float:right;
+}
+.ft-list2{
+  display:flex;
+  flex-direction: column;
+  width:300px;
+  padding: 25px 40px 0 40px;
+  line-height: 20px;
+}
+.ft-list3{
+  padding: 25px;
+  width:300px;
+}
+.ft-list3 ul{
+  display: flex;
+  margin: 0 0 40px 0;
+}
+.ft-list3 ul>li+li{
+  margin-left:10px;
+}
+.ft-list3 address{
+  display: flex;
+  flex-direction: column;
+}
+.ft-list3 img{
+  width: 78px;
+  height:36px;
 }
