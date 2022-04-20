@@ -13,9 +13,8 @@ window.addEventListener("load", function () {
         counter -= 40;
         outer.style.transform = `perspective(1300px) rotateX(0deg) rotateY(${counter}deg)`;
       } else {
-        function disableScroll() {
-          window.addEventListener("DOMMouseScroll", preventDefault, false);
-        }
+        counter += 40;
+        outer.style.transform = `perspective(1300px) rotateX(0deg) rotateY(${counter}deg)`;
       }
     }
   });
@@ -35,14 +34,16 @@ window.addEventListener("load", function () {
     if (gallery.style.display != "none") {
       if (e.wheelDelta === -120) {
         wheelcounter += 1;
-        if (wheelcounter > 8) {
+        if (wheelcounter === 9) {
           wheelcounter = 0;
         }
         cardname.innerText = elementimg[wheelcounter].getAttribute("alt");
       } else {
-        function disableScroll() {
-          window.addEventListener("DOMMouseScroll", preventDefault, false);
+        wheelcounter -= 1;
+        if(wheelcounter === -1) {
+          wheelcounter = 8;
         }
+        cardname.innerText = elementimg[wheelcounter].getAttribute("alt");
       }
     }
   });
