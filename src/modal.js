@@ -14,7 +14,7 @@ const sub1 = document.querySelector(".sub-container");
 const sub2_txt = document.querySelector(".sub2-txt");
 // 상위 요소 박스만 잡고 안에 넣을 이미지와 span은 아래에서 코드생성함!
 const sub2_ibx = document.querySelector(".sub2-img-box");
-const s2span =document.querySelector(".s2span");
+const sub2_name = sub2_ibx.querySelectorAll("li");
 let funcs = [];
 
 // Modal을 띄우고 닫는 클릭 이벤트를 정의한 함수
@@ -44,20 +44,22 @@ function Modal(num) {
       let itemp="<ul>";
       data["디자인"].forEach((val, idx) => {
         itemp += 
-        `<li class="s2span">
+        `<li>
             <img src="images/${val}" alt="image">
-            <span>${data["디자인이름"][idx]}</span>
+            <span class="span">${data["디자인이름"][idx]}</span>
         </li>`;
       });
       itemp += "</ul>";
       // 대상요소에 코드 할당하기 //
       sub2_ibx.innerHTML = itemp;
       ScaleFunction();
+      console.log(sub2_name);
       ////////// 숨기고 보이기  //////////
       gallery.style.display = "none";
       cardnamebox.style.display = "none";
       sub1.style = "display:block";
       before.style = "display:block";
+      ///// 이전으로 가기 버튼//////
       before.addEventListener("click", () => {
         before.style = "display:none";
         sub1.style = "display:none";
@@ -84,19 +86,12 @@ function ScaleFunction() {
     const scrollPosition = document.documentElement.scrollTop;
     if (scrollPosition >= "900") {
       document.querySelector(".sub2-img-box ul").style.transform = "scale(0.8)";
-      // sub2_name 대신 sub2_ibx로 처리!
-      for (var i = 0; i < sub2_ibx.length; i++) {
-        sub2_ibx[i].querySelector("span").style.transform = "scale(1.4)";
-      }
     } else {
       document.querySelector(".sub2-img-box ul").style.transform = "scale(1)";
-      // sub2_name 대신 sub2_ibx로 처리!
-      for (var i = 0; i < sub2_ibx.length; i++) {
-        sub2_ibx[i].querySelector("span").style.transform = "scale(1)";
-      }
     }
   });
 }
+
 var deck = {
   green: {
     타이틀: "the Green Edition2",
@@ -128,7 +123,7 @@ var deck = {
     요약: "My First Seduction",
     설명: ["프로쇼퍼들의 필수 럭셔리 카드", "프리미엄쇼핑·고메 5% 적립"],
     요금: ["본인 150,000원", "본인 150,000원", "본인 150,000원"],
-    디자인: ["pink1.png", "pink2.png", "pink3.png", "pink4.png", "pink5.png"],
+    디자인: ["pink1.png", "pink2.png", "pink3.png", "pink4.png"],
     디자인이름: ["Glossy", "Stranger", "Lollipop", "Little Black Dress"],
   },
   purple: {
