@@ -20,7 +20,7 @@ let funcs = [];
 // Modal을 띄우고 닫는 클릭 이벤트를 정의한 함수
 function Modal(num) {
   return function () {
-    // 해당 클래스의 내용을 클릭하면 Modal을 띄웁니다.
+    // 해당 클래스의 내용을 클릭하면 서브페이지를 띄웁니다.
     btns[num].onclick = function () {
       // data-id 출력
       let id = btns[num].dataset.id;
