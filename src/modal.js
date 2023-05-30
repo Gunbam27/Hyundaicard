@@ -17,68 +17,83 @@ const sub2_ibx = document.querySelector(".sub2-img-box");
 const sub2_name = sub2_ibx.querySelectorAll("li");
 let funcs = [];
 
+//Img pre-load
+
+var images = new Array();
+function preload() {
+  for (i = 0; i < preload.arguments.length; i++) {
+    images[i] = new Image();
+    images[i].src = preload.arguments[i];
+  }
+}
+preload(
+  'images/greenall.png',
+  'images/redall.png',
+  'images/pinkall.png',
+  'images/purpleall.png',
+  'images/famall.png',
+  'images/mbooall.png',
+  'images/xbooall.png',
+  'images/naverall.png',
+  'images/blackall.png',
+);
+
 // Modal을 띄우고 닫는 클릭 이벤트를 정의한 함수
 function Modal(num) {
-  return function () {
-    // 해당 클래스의 내용을 클릭하면 서브페이지를 띄웁니다.
-    btns[num].onclick = function () {
-      // data-id 출력
-      let id = btns[num].dataset.id;
-      // id에 따른 객체 데이터 읽어오기
-      let data = deck[id];
+  // 해당 클래스의 내용을 클릭하면 서브페이지를 띄웁니다.
+  btns[num].onclick = function () {
+    // data-id 출력
+    let id = btns[num].dataset.id;
+    // id에 따른 객체 데이터 읽어오기
+    let data = deck[id];
 
-      // data-id에따라 바뀌는 내용
-      mimg.style.backgroundImage = `url(images/${id}all.png)`;
-      title.innerText = data["타이틀"];
-      summary.innerText = data["요약"];
-      sub2_txt.innerText = `${data["타이틀"]}의
-      특별한 디자인을 소개합니다.`;
-      data["설명"].forEach((val, idx) => {
-        desc[idx].innerText = val;
-      });
-      data["요금"].forEach((val, idx) => {
-        memberfee[idx].innerText = val;
-      });
-      
-      // 코드 변수만들기 ///
-      let itemp="<ul>";
-      data["디자인"].forEach((val, idx) => {
-        itemp += 
-        `<li>
-            <img src="images/${val}" alt="image">
-            <span class="span">${data["디자인이름"][idx]}</span>
-        </li>`;
-      });
-      itemp += "</ul>";
-      // 대상요소에 코드 할당하기 //
-      sub2_ibx.innerHTML = itemp;
-      ScaleFunction();
-      console.log(sub2_name);
-      ////////// 숨기고 보이기  //////////
-      gallery.style.display = "none";
-      cardnamebox.style.display = "none";
-      sub1.style = "display:block";
-      before.style = "display:block";
-      ///// 이전으로 가기 버튼//////
-      before.addEventListener("click", () => {
-        before.style = "display:none";
-        sub1.style = "display:none";
-        gallery.style.display = "flex";
-        cardnamebox.style.display = "block";
-      });
-    };
+
+    
+    // data-id에따라 바뀌는 내용
+    mimg.style.backgroundImage = `url(images/${id}all.png)`;
+    title.innerText = data["타이틀"];
+    summary.innerText = data["요약"];
+    sub2_txt.innerText = `${data["타이틀"]}의
+    특별한 디자인을 소개합니다.`;
+    data["설명"].forEach((val, idx) => {
+      desc[idx].innerText = val;
+    });
+    data["요금"].forEach((val, idx) => {
+      memberfee[idx].innerText = val;
+    });
+    
+    // 코드 변수만들기 ///
+    let itemp="<ul>";
+    data["디자인"].forEach((val, idx) => {
+      itemp += 
+      `<li>
+          <img src="images/${val}" alt="image">
+          <span class="span">${data["디자인이름"][idx]}</span>
+      </li>`;
+    });
+    itemp += "</ul>";
+    // 대상요소에 코드 할당하기 //
+    sub2_ibx.innerHTML = itemp;
+    ScaleFunction();
+    console.log(sub2_name);
+    ////////// 숨기고 보이기  //////////
+    gallery.style.display = "none";
+    cardnamebox.style.display = "none";
+    sub1.style = "display:block";
+    before.style = "display:block";
+    ///// 이전으로 가기 버튼//////
+    before.addEventListener("click", () => {
+      before.style = "display:none";
+      sub1.style = "display:none";
+      gallery.style.display = "flex";
+      cardnamebox.style.display = "block";
+    });
   };
-}
-// 원하는 Modal 수만큼 Modal 함수를 호출해서 funcs 함수에 정의합니다.
-// funcs=[Modal(0),[Modal(1),[Modal(2).....[Modal(8)]
-for (var i = 0; i < btns.length; i++) {
-  funcs[i] = Modal(i);
+
 }
 
-// 원하는 Modal 수만큼 funcs 함수를 호출합니다.
-// funcs[0](); funcs[1](); funcs[2]();.....funcs[8]();
 for (var j = 0; j < btns.length; j++) {
-  funcs[j]();
+  Modal(j);
 }
 // 페이지2 영역에 스크롤시 카드가 작아지고 카드명이 커지는 효과.
 function ScaleFunction() {
